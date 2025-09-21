@@ -18,5 +18,9 @@ app.use('/api/', userRoute);
 app.use('/api/notes', notesRoute);
 app.use('/api/tenants', tenantRoute);
 app.get("/api/health", (req, res) => res.json({ status: "ok" }));
+app.get('/', (req, res) => {
+  res.send('Backend is running!');
+});
+
 
 app.listen(process.env.PORT, ()=>console.log("backend running at port : 3000"));
